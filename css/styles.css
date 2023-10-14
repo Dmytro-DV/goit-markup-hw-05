@@ -582,7 +582,7 @@ p, h1,h2,h3,h4,h5,h6 {
     height: 40px;
     border-radius: 4px;
     border: 1px solid #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     background-color: transparent;
     color: #FFF;
     font-size: 12px;
@@ -637,6 +637,7 @@ p, h1,h2,h3,h4,h5,h6 {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
     /*display: flex;
     align-items: center;
     justify-content: center;*/
@@ -644,7 +645,7 @@ p, h1,h2,h3,h4,h5,h6 {
 
 .modal {
     width: 408px;
-    height: 584px;
+    min-height: 584px;
     border-radius: 4px;
     background: #FCFCFC;
     position: absolute;
@@ -698,6 +699,7 @@ p, h1,h2,h3,h4,h5,h6 {
 
 .modal-btn-icon {
     /*fill: #2E2F42;*/
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input {
@@ -730,6 +732,7 @@ p, h1,h2,h3,h4,h5,h6 {
 
 .modal-input-wrap {
     position: relative;
+    margin-bottom: 16px
 }
 
 .modal-icon {
@@ -753,7 +756,6 @@ p, h1,h2,h3,h4,h5,h6 {
     color: rgba(46, 47, 66, 0.40);
     font-size: 12px;
     line-height: 1.17;
-    /* 116.667% */
     letter-spacing: 0.04em;
 }
 
@@ -769,22 +771,19 @@ p, h1,h2,h3,h4,h5,h6 {
     color: #8E8F99;
     font-size: 12px;
     line-height: 1.17;
-    /* 116.667% */
     letter-spacing: 0.04em;
-    display: flex;
-    align-items: center;
+    /*display: flex;
+    align-items: center;*/
 }
 
 .check-text a {
     color: #4D5AE5;
-        font-size: 12px;
-        line-height: 1.33;
-        letter-spacing: 0.04em;
-        text-decoration-line: underline;
+    text-decoration-line: underline;
+    margin-left: 4px;
 }
 
 .check-text span {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 16px;
@@ -796,15 +795,16 @@ p, h1,h2,h3,h4,h5,h6 {
 }
 
 .modal-span {
-    /*display: inline-flex;
+    display: inline-flex;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);*/
+        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .check-input:checked + .check-text span {
     background-color: #404BBF;
     border: none;
+    fill: #F4F4FD;
 }
 
 .modal-checkbox {
